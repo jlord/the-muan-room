@@ -12,6 +12,7 @@ header {
 header h1 {
   font-family: 'Playfair Display';
   font-style: italic;
+  font-size: 40px;
 }
 
 header h2 {
@@ -22,6 +23,29 @@ header h2 {
   font-weight:300;
 }
 
+footer {
+  padding: 20px;
+  text-align: center;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+  padding-bottom: 1px;
+  border-bottom: 1px solid #333;
+  transition: all 0.5s ease;
+}
+
+a:hover {
+  color: #8cf1d6;
+  border-color: #8cf1d6;
+}
+
+ul {
+  list-style: none;
+  margin: 0; padding: 0;
+}
+
 .wrapper {
   width: 800px;
   /*background: #4faf8a;*/
@@ -30,8 +54,9 @@ header h2 {
 }
 
 .entries {
-  padding: 40px 20px;
+  padding: 20px 20px 0 20px;
   background: #fff;
+  opacity: .75;
   margin-top:30px;
 }
 
@@ -42,4 +67,21 @@ header h2 {
 .metadata {
   text-transform: uppercase;
   font-size: 12px;
+  color: #bababa;
+}
+
+.metadata span {
+  padding-right: 9px;
+}
+
+.guest-stars {
+  transition: color 0.5s ease;
+}
+
+.guest-stars:hover {
+  color: rgba(211, 241, 30, 0.71)
+}
+.guest-comment p {
+  font-size: 18px;
+  margin: 4px 0;
 }
