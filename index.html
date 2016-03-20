@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="style.css">
     <link href='https://fonts.googleapis.com/css?family=Playfair+Display:900italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+    <script   src="http://code.jquery.com/jquery-2.2.2.min.js"   integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI="   crossorigin="anonymous"></script>
+    <script src="./tabletop1.3.4.js"></script>
   </head>
   <body>
     <div class="wrapper">
@@ -53,6 +55,8 @@
           </div>
         </div>
 
+        <div id="siteTable"></div>
+
       </div>
       <footer>
         <ul>
@@ -61,4 +65,36 @@
       </footer>
     </div>
   </body>
+
+  <script id="table_template" type="text/html">
+    <table>
+    <tr><th class="tHeader">Name</th><th class="tHeader">Arrival</th><th class="tHeader">Departure</th><th class="tHeader">Stay</th></tr>
+      {{#rows}}
+        <tr><td>{{name}}</td><td>{{arrival}}</td><td>{{departure}}</td><td>{{stay}}</td></tr>
+      {{/rows}}
+    </table>
+  </script>
+
+  <script src="./sheetsee.js"></script>
+
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+      var ich = window.Handlebars
+      var URL = "1U_KGms1Kq2slw51rmiOlyRLAw9SxFHsv9MLstC1_gAA"
+      Tabletop.init( { key: URL, callback: showInfo, simpleSheet: true } )
+
+      function showInfo(data, tabletop) {
+        var tableOptions = {
+                            "data": data,
+                            "tableDiv": "#siteTable",
+                            "templateID": "table_template"
+                            }
+        Sheetsee.makeTable(tableOptions)
+      }
+
+    })
+
+
+  </script>
+
 </html>
