@@ -1,9 +1,12 @@
+html, body { height: 100%; }
+
 body {
   font-family: 'Source Sans Pro', Arial, sans-serif;
   color: #333;
   background: url('room-pic.jpg');
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
   margin: 0;
 }
 
@@ -23,11 +26,6 @@ header h2 {
   padding-top: 0;
   margin: 0;
   font-weight:300;
-}
-
-footer {
-  padding: 20px;
-  text-align: center;
 }
 
 a {
@@ -54,8 +52,8 @@ ul {
 }
 
 .wrapper {
-  width: 800px;
-  /*background: #4faf8a;*/
+  max-width: 800px;
+  min-width: 320px;
   margin: 0 auto;
   padding: 60px 20px;
 }
@@ -64,7 +62,8 @@ ul {
   padding: 20px 20px 0 20px;
   background: #fff;
   opacity: .75;
-  margin-top:30px;
+  margin-top: 30px;
+  overflow: auto;
 }
 
 .entry {
@@ -98,7 +97,7 @@ ul {
   padding-top: 20px;
 }
 
-.opt-footer {
+footer {
   position: absolute;
   bottom: 0px;
   background: #F8F9FB;
