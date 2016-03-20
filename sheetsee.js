@@ -26950,6 +26950,7 @@
                 templateID = opts.tableDiv.replace("#", "") + "_template"
             }
             var template = $(templateID)
+            console.log('opts', opts)
             var tableContents = ich[templateID]({
                 rows: data
             })

@@ -7,7 +7,7 @@
     <meta name="description" content="A guestbook">
     <meta name="author" content="Jessica Lord">
     <title>The Mu-An Room</title>
-    <link rel="icon" type="image/png" href="favicon.png">
+    <!-- <link rel="icon" type="image/png" href="favicon.png"> -->
     <link rel="stylesheet" href="style.css">
     <link href='https://fonts.googleapis.com/css?family=Playfair+Display:900italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
@@ -22,42 +22,9 @@
       </header>
 
       <div class="entries">
-        <div class="entry">
-          <div class="guest-comment">
-            <p>I had a really great stay here. Like wow.</p>
-          </div>
-          <div class="metadata">
-            <span class="guest-name">Mathias</span>
-            <span class="guest-date">Sept. 23, 2015</span>
-            <span class="guest-stars">★★★★★</span>
-          </div>
-        </div>
-
-        <div class="entry">
-          <div class="guest-comment">
-            <p>I had a really great stay here. Much to do, very room.</p>
-          </div>
-          <div class="metadata">
-            <span class="guest-name">Buus</span>
-            <span class="guest-date">Sept. 23, 2015</span>
-            <span class="guest-stars">★★★★★</span>
-          </div>
-        </div>
-
-        <div class="entry">
-          <div class="guest-comment">
-            <p>I had a really great stay here.</p>
-          </div>
-          <div class="metadata">
-            <span class="guest-name">Madsen</span>
-            <span class="guest-date">Sept. 23, 2015</span>
-            <span class="guest-stars">★★★★★</span>
-          </div>
-        </div>
-
         <div id="siteTable"></div>
-
       </div>
+
       <footer>
         <ul>
           <li class="metadata"><a href="https://github.com/jlord/the-muan-room">Repository</a></li>
@@ -66,13 +33,19 @@
     </div>
   </body>
 
-  <script id="table_template" type="text/html">
-    <table>
-    <tr><th class="tHeader">Name</th><th class="tHeader">Arrival</th><th class="tHeader">Departure</th><th class="tHeader">Stay</th></tr>
-      {{#rows}}
-        <tr><td>{{name}}</td><td>{{arrival}}</td><td>{{departure}}</td><td>{{stay}}</td></tr>
-      {{/rows}}
-    </table>
+  <script id="siteTable_template" type="text/html">
+    {{#rows}}
+    <div class="entry">
+      <div class="guest-comment">
+        <p>{{stay}}</p>
+      </div>
+      <div class="metadata">
+        <span class="guest-name">{{name}}</span>
+        <span class="guest-date">{{arrival}} to {{departure}}</span>
+        <span class="guest-stars">★★★★★</span>
+      </div>
+    </div>
+    {{/rows}}
   </script>
 
   <script src="./sheetsee.js"></script>
@@ -84,17 +57,16 @@
       Tabletop.init( { key: URL, callback: showInfo, simpleSheet: true } )
 
       function showInfo(data, tabletop) {
+        console.log('data', data)
         var tableOptions = {
                             "data": data,
-                            "tableDiv": "#siteTable",
-                            "templateID": "table_template"
+                            "pagination": 10,
+                            "tableDiv": "#siteTable"
                             }
         Sheetsee.makeTable(tableOptions)
       }
 
     })
-
-
   </script>
 
 </html>
