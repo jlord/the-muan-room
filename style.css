@@ -82,6 +82,7 @@ ul {
 
 .guest-stars {
   transition: color 0.5s ease;
+  cursor: default;
 }
 
 .guest-stars:hover {
