@@ -2,7 +2,9 @@ body {
   font-family: 'Source Sans Pro', Arial, sans-serif;
   color: #333;
   background: url('room-pic.jpg');
-  background-size: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0;
 }
 
 header {
@@ -10,7 +12,7 @@ header {
 }
 
 header h1 {
-  font-family: 'Playfair Display';
+  font-family: 'Playfair Display', Georgia, serif;
   font-style: italic;
   font-size: 40px;
 }
@@ -94,4 +96,13 @@ ul {
 .forkngo-banner img {
   width: 150px;
   padding-top: 20px;
+}
+
+.opt-footer {
+  position: absolute;
+  bottom: 0px;
+  background: #F8F9FB;
+  width: 100%;
+  text-align: center;
+  font-size: 11px;
 }
