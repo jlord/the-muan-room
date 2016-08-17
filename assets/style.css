@@ -7,6 +7,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  background-attachment: fixed;
   margin: 0;
 }
 
@@ -55,7 +56,7 @@ ul {
   max-width: 800px;
   min-width: 320px;
   margin: 0 auto;
-  padding: 60px 20px;
+  padding: 60px 20px 200px;
 }
 
 .entries {
@@ -100,10 +101,12 @@ ul {
 }
 
 footer {
-  position: absolute;
+  position: fixed;
   bottom: 0px;
   background: #F8F9FB;
-  width: 100%;
+  left: 0;
+  right: 0;
+  padding: 10px 20px;
   text-align: center;
   font-size: 11px;
 }
